@@ -7,7 +7,8 @@ const button= document.querySelector('.submit');
 
 
 button.addEventListener('click', function(name){
-fetch('https://api.openweathermap.org/data/2.5/weather?q='+input.value+'&appid=50a7aa80fa492fa92e874d23ad061374&units=metric')
+fetch('https://api.openweathermap.org/data/2.5/weather?q='
++input.value+'&appid=50a7aa80fa492fa92e874d23ad061374&units=metric')
 .then(response => response.json())
 
 // handleData
@@ -22,4 +23,6 @@ fetch('https://api.openweathermap.org/data/2.5/weather?q='+input.value+'&appid=5
   temp.innerHTML = "Temp - "+tempValue;
   input.value ="";
 
-})})
+})
+// handlerror
+.catch(err => alert("Wrong city name!"));})
